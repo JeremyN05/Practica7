@@ -66,6 +66,8 @@ for (int i = 0; i < numero_estudiantes; i++){
 	printf("%s %s Nota: %2.f \n", Estudiantes[i].Nombre, Estudiantes[i].Apellido, Estudiantes[i].Nota);
 }
 
+printf("Aqui abajo se muestran los alumnos ingresados por orden (nota y orden alfabético)");
+
 	free(Estudiantes);
 	return 0;
 }
