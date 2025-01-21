@@ -64,9 +64,20 @@ do{
 for (int i = 0; i < numero_estudiantes; i++){
 
 	printf("%s %s Nota: %2.f \n", Estudiantes[i].Nombre, Estudiantes[i].Apellido, Estudiantes[i].Nota);
+
 }
 
-printf("Aqui abajo se muestran los alumnos ingresados por orden (nota y orden alfabético)");
+printf("Aqui abajo se muestran los alumnos ingresados por orden (nota y orden alfabético): \n");
+
+printf("Por orden de nota (Mayor a Menor): \n");
+
+
+
+for (int i = 0; i < numero_estudiantes; i++){ //Terminar de acabar Ordenar por nota. TO DO.
+	if(Estudiantes->Nota = 10){
+		printf("%2.f\n", Estudiantes[i].Nota);
+	}
+}
 
 	free(Estudiantes);
 	return 0;
