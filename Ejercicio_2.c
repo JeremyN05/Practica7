@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //Defino las constantes que voy a utilizar
 
@@ -20,6 +21,10 @@ int main(){
 int numero_estudiantes;
 
 int valor_retorno;
+
+int aux;
+
+char aux2[MAX_APELLIDO];
 
 do{
 	printf("Ingrese el número de alumnos a introducir: ");
@@ -66,6 +71,7 @@ for (int i = 0; i < numero_estudiantes; i++){
 	printf("%s %s Nota: %2.f \n", Estudiantes[i].Nombre, Estudiantes[i].Apellido, Estudiantes[i].Nota);
 
 }
+printf("\n");
 
 printf("Aqui abajo se muestran los alumnos ingresados por orden (nota y orden alfabético): \n");
 
@@ -74,9 +80,38 @@ printf("Por orden de nota (Mayor a Menor): \n");
 
 
 for (int i = 0; i < numero_estudiantes; i++){ //Terminar de acabar Ordenar por nota. TO DO.
-	if(Estudiantes->Nota = 10){
-		printf("%2.f\n", Estudiantes[i].Nota);
+	for (int j = i + 1; j < numero_estudiantes; j++){
+
+		if(Estudiantes[i].Nota < Estudiantes[j].Nota){
+			aux = Estudiantes[i].Nota;
+			Estudiantes[i].Nota = Estudiantes[j].Nota;
+			Estudiantes[j].Nota = aux;
+		}
 	}
+}
+
+for (int i = 0; i < numero_estudiantes; i++){
+	printf("%2.f, \n", Estudiantes[i].Nota);
+}
+
+
+printf("\n");
+
+printf("Por orden de apellido: \n");
+
+for (int i = 0; i < numero_estudiantes; i++){
+	for (int j = i + 1; j < numero_estudiantes; j++){
+
+		if (strcmp(Estudiantes[i].Apellido, Estudiantes[j].Apellido) > 0){
+			strcpy (aux2, Estudiantes[i].Apellido);
+			strcpy (Estudiantes[i].Apellido, Estudiantes[j].Apellido);
+			strcpy (Estudiantes[j].Apellido, aux2);
+		} 
+	}
+}
+
+for (int i = 0; i < numero_estudiantes; ++i){
+	printf("%s \n", Estudiantes[i].Apellido);
 }
 
 	free(Estudiantes);
