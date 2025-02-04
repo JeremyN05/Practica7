@@ -26,6 +26,8 @@ int aux;
 
 char aux2[MAX_APELLIDO];
 
+char aux3[MAX_NOMBRE];
+
 do{
 	printf("Ingrese el número de alumnos a introducir: ");
 	valor_retorno = scanf("%d", &numero_estudiantes);
@@ -84,14 +86,18 @@ for (int i = 0; i < numero_estudiantes; i++){ //Terminar de acabar Ordenar por n
 
 		if(Estudiantes[i].Nota < Estudiantes[j].Nota){
 			aux = Estudiantes[i].Nota;
+			strcpy (aux2, Estudiantes[i].Apellido);
 			Estudiantes[i].Nota = Estudiantes[j].Nota;
+			strcpy (Estudiantes[i].Apellido, Estudiantes[j].Apellido);
 			Estudiantes[j].Nota = aux;
+			strcpy (Estudiantes[j].Apellido, aux2);
+		
 		}
 	}
 }
 
 for (int i = 0; i < numero_estudiantes; i++){
-	printf("%2.f, \n", Estudiantes[i].Nota);
+	printf(" %s, %2.f, \n", Estudiantes[i].Nombre,Estudiantes[i].Nota);
 }
 
 
